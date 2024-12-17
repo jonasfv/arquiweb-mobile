@@ -29,6 +29,7 @@
                 `;
                 rankingList.appendChild(li);
             });
+			console.log("Ranking generado.");
         }
 
         function mezclarRanking() {
@@ -52,8 +53,15 @@
                 imageContainer.innerHTML = ""; 
                 imageContainer.appendChild(canvas);
                 console.log("Imagen generada.");
+				const image = canvas.toDataURL("image/png");
+				const link = document.createElement("a");
+				link.href = image;
+				link.download = "captura.png"; 
+				link.click();
             });
-        }
+        } 
+		
+	
 
 
         renderRanking(rankingOriginal);
